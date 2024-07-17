@@ -1,0 +1,17 @@
+# A first workflow
+name: My First Work flow
+on: 
+  push:
+    branches: 
+      - main
+  workflow_dispatch: 
+jobs:
+  first_job:
+    name: my first job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hello World from ${{ github.actor }}."
+      - name: checkout
+        uses: actions/checkout@v4.1.0
+      - run: tree
